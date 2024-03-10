@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Booking</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="The River template project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.2/bootstrap.min.css">
+
+<link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.2/bootstrap.min.css">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.3.4/animate.css">
+<link href="plugins/jquery-datepicker/jquery-ui.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="styles/booking.css">
+<link rel="stylesheet" type="text/css" href="styles/booking_responsive.css">
+<style>
+  /* Gallery Styles */
+  .gallery {
+        padding: 80px 0;
+        background-color: #f9f9f9;
+    }
+
+    .gallery_title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
+
+    .gallery_images {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .gallery_item {
+        margin-bottom: 20px;
+    }
+
+    .gallery_item img {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 767px) {
+        .gallery_images {
+            justify-content: center;
+        }
+    }
+
+  .navbar {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        .navbar a {
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .navbar-brand img {
+            max-width: 100px; /* Set the maximum width for your logo */
+        }
+        /* Responsive Styles for Day Tour Plan */
+@media (max-width: 767px) {
+    .details_title h1 {
+        font-size: 20px; /* Adjust the font size for smaller screens */
+    }
+
+    .table {
+        font-size: 14px; /* Adjust the font size for smaller screens */
+    }
+}
+
+        #startLocation {
+    border: none;  /* Remove the border */
+    padding: 10px; /* Add some padding to increase size */
+    width: 200px;
+    font-size: 40px;  
+    
+    /* Set the width to your desired size */
+  }
+</style>
+</head>
+<body>
+
+<div class="super_container">
+
+    <!-- Header -->
+    
+	<nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+          <img src="images/new.jpg" alt="">
+             
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../adventure.html">Adventure </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html#event">Packages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="..//map.html">Map</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="..//blogs.html">Blogs </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="..//events.html">Events </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="..//about.html">About Us
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Menu -->
+
+    <!-- Home -->
+
+    <!-- Booking -->
+
+    <!-- Details Right -->
+
+    <div class="details">
+        <div class="container">
+            <div class="row">
+
+                <!-- Details Image -->
+                <div class="col-xl-7 col-lg-6">
+                    <div class="details_image">
+                        <div class="background_image" style="background-image:url(images/p3.jpg)"></div>
+                    </div>
+                </div>
+
+                <!-- Details Content -->
+                <div class="col-xl-5 col-lg-6">
+                    <div class="details_content">
+                        <div class="book_now_button"><a href="#gallery">Gallery</a></div>
+
+                        
+                        <div class="details_title">Southern Sri Lanka Tour: 5 Days Tour</div>
+                        <div>   
+
+                            <input type="text" id="startLocation" name="startLocation" value="$650">
+                        <div class="details_list">
+                            <ul>
+                                <li>  Spend 3 memorable days with a full-day safari at Yala national park. You will be travelling along the south and west coast while encountering ancient Forts, pristine beaches, wildlife parks teeming with elephants, leopards and bear and picturesque hill country on this 3 days private tour. </li>
+                                <li><br><h1>Trip Type</h1> <br>
+                                    Sri Lanka 5 Days Tour</li>
+
+                                    <li><br><h1>Trip Duration</h1> <br>
+                                        4 Day(s) 3 Night(s)</li>
+                                <li><br><h1>Locations</h1><br> Galle , Kandy , Pinnawala , Sigiriya , Yala,cololmbo</li>
+                            </ul>
+                            <div class="book_now_button"><a onclick="redirectToNewPage()">Book Now</a></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Details Left -->
+
+    <div class="details">
+        <div class="container">
+            <div class="row">
+
+                <!-- Details Content -->
+                <div>
+                    <div>
+                        <div class="details_title">  Southern Sri Lanka Mini Tour -5 Days Private Tour</div>
+                        <div class="details_list">
+                            <ul>
+                                <li><h3>Spend 5 memorable days with a full-day safari at Yala national park. You will be travelling along the south and west coast while encountering ancient Forts, pristine beaches, wildlife parks teeming with elephants, leopards and bears and picturesque hill country on this 4 days private tour</h3><br>
+                                     
+                                    
+                                    <h3>Start:</h3>Colombo ,Sri lanka
+                                    <h3>Finish:</h3>Colombo ,Sri lanka
+                                </li>
+                            </ul>
+                        </div>
+
+
+
+
+
+
+                        <div class="details_title"><h1>Day Tour Plane with Locallankaguides Traveles <br></h1></div>
+                        <div class="detail_list">
+                            <div class="details_title">
+                                <h1>5-Day Tour with Locallankaguides Travels</h1>
+                            </div>
+                            <div class="detail_list">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Day</th>
+                                            <th>Activities</th>
+                                            <th>Meals</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Day 01</td>
+                                            <td>
+                                                Discuss travel plans. Depart from Colombo after breakfast, traveling by our own vehicle to Galle. Explore the historic city and local culture upon arrival.
+                                            </td>
+                                            <td>N/A</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Day 02</td>
+                                            <td>
+                                                After breakfast in Galle, travel to Kandy. Visit the Temple of the Tooth, enjoy a local lunch, explore Peradeniya Park, and go shopping in Kandy.
+                                            </td>
+                                            <td>Breakfast</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Day 03</td>
+                                            <td>
+                                                Depart for Pinnawala after breakfast. Visit the Pinnawala Elephant Orphanage and continue to Sigiriya. Explore the Sigiriya rock fortress and its surroundings.
+                                            </td>
+                                            <td>Breakfast</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Day 04</td>
+                                            <td>
+                                                Explore Yala National Park.
+                                            </td>
+                                            <td>Breakfast</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Day 05</td>
+                                            <td>
+                                                Visit Colombo and conclude your journey.
+                                            </td>
+                                            <td>Breakfast</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            </div>
+                            
+
+
+                        <div class="details_title">Highlights</div>
+                        <div class="details_list">
+                            <ul>
+                                <li>The trip includes all sightseeing and transfers on private vehicles.</li>
+                                <li>Trekking through the tea garden / Ceylon tea trail, spice garden.</li>
+                                <li>Guided walking tour of Galle fort to witness ancient constructions.</li>
+                                <li>Safari T Yala national park to see wild creatures such as leopards, crocodiles, elephants, deer, bears etc.</li>
+                                <li>Take a break from bustling cities in the hill country resort of Nuwara Eliya, where you can catch your breath and spend the night in the faded opulence of your heritage stay.</li>
+                                <li>This trip is perfect for people who like to get the most on a 3 days trip to Sri Lanka, as long travel days are kept to a minimum on an itinerary that hits several icons of central Sri Lanka.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="details_title">Hotels</div>
+                    <div class="details_list">
+                        <ul>
+                            <li>This tour can be booked with 4 types of accommodation standards: 3-Star, 4-Star, and 5-Star hotels. If you need any other category of hotel, please inquire. Choose a suitable category of hotel for your trip. The hotel category makes a big difference in your package price. </li>
+                        </ul>
+                    </div>
+
+                    <div class="details_title">Choose your payment method</div>
+                    <div class="details_list">
+                        <ul>
+                            <li>We offer you mainly three payment options: card payments, bank transfers, or payment on arrival. You can choose whatever is the most convenient payment option for you. If you opt for payment on arrival, we will collect a 10% advance payment from you as a guarantee once the booking is confirmed. </li>
+                        </ul>
+						<br>
+						<div class="book_now_button"><a onclick="redirectToNewPage()">Book Now</a></div>
+                        
+                    </div>
+                </div>
+
+                <!-- Gallery Box -->
+                 <!-- Gallery Box for Palaces -->
+<div class="col-xl-7 col-lg-6 order-lg-2 order-1">
+    <div class="gallery">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="gallery_title" id="gallery">Palaces Gallery</div><br><br>
+
+
+
+
+
+
+
+
+                    <div class="gallery">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="gallery_title">Palaces Gallery</div><br><br>
+                                        <!-- Kandy gallery -->
+                                     <div class="gallery_title">Galle Gallery</div>
+                                    <div class="gallery_images" id="palacesGallery">
+                                        <!-- Add palace images here -->
+                                        <div class="gallery_item">
+                                            <img src="images/galle/g1.jpg" alt="">
+                                            <img src="images/galle/g2 alt="">
+                                            <img src="images/galle/g3.jpg" alt="">
+                
+                                            <img src="images/galle/g4.jpg" alt="">
+                                            <img src="images/galle/g5.jpg" alt="">
+                                            <img src="images/galle/g6.jpeg" alt="">
+                                            <img src="images/galle/g7.jpg" alt="">
+                                            <img src="images/galle/g8.jpg" alt="">
+                                             
+                
+                
+                                           
+                                           
+                
+                                        </div>
+                                        <!-- Add more palace gallery items as needed -->
+                                    </div>
+                                </div>
+                
+                
+                
+                
+                
+                
+                              
+                
+                
+                
+                
+                
+                
+                
+                            </div>
+                        </div>
+                    </div>
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <!-- Kandy gallery -->
+                     <div class="gallery_title">Kandy Gallery</div>
+                    <div class="gallery_images" id="palacesGallery">
+                        <!-- Add palace images here -->
+                        <div class="gallery_item">
+                            <img src="images/" alt="">
+                            <img src="images/kandy/k1.jpg" alt="">
+                            <img src="images/kandy/k2.jpg" alt="">
+
+                            <img src="images/kandy/k3.jpg" alt="">
+                            <img src="images/kandy/k4.jpg" alt="">
+                            <img src="images/kandy/k5.jpg" alt="">
+                            <img src="images/kandy/k7.webp" alt="">
+                            <img src="images/kandy/k8.jpg" alt="">
+                            <img src="images/kandy/k9.jpeg" alt="">
+                            <img src="images/kandy/k10.jpg" alt="">
+                            <img src="images/kandy/k11" alt="">
+                            <img src="images/kandy/k12.jpg" alt="">
+                            <img src="images/kandy/k13.jpg" alt="">
+
+                        </div>
+                        <!-- Add more palace gallery items as needed -->
+                    </div>
+                </div>
+
+
+
+
+
+
+              
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+  <!-- galle sri lanka-->
+
+
+   
+
+   <!-- nuwaraeliya gallery -->
+
+
+    <div class="gallery">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="gallery_title">Palaces Gallery</div><br><br>
+                        <!-- Kandy gallery -->
+                     <div class="gallery_title">Yala Gallery</div>
+                    <div class="gallery_images" id="palacesGallery">
+                        <!-- Add palace images here -->
+                        <div class="gallery_item">
+                            <img src="images/yala/y1.jpg" alt="">
+                            <img src="images/yala/y2.jpg" alt="">
+                            <img src="images/yala/y3.jpg" alt="">
+                            <img src="images/yala/y4.jpg" alt="">
+                            <img src="images/yala/y5.jpg" alt="">
+                             
+                             
+                            
+                           
+                           
+
+                        </div>
+                        <!-- Add more palace gallery items as needed -->
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="gallery">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="gallery_title">Palaces Gallery</div><br><br>
+                        <!-- Kandy gallery -->
+                     <div class="gallery_title"> ColomboGallery</div>
+                    <div class="gallery_images" id="palacesGallery">
+                        <!-- Add palace images here -->
+                        <div class="gallery_item">
+                            <img src="images/colombo/c1.jpg" alt="">
+                            <img src="images/colombo/c2.jpg" alt="">
+                            <img src="images/colombo/c3.jpg" alt="">
+                            <img src="images/colombo/c4.jpg" alt="">
+                            <img src="images/colombo/c5.jpg" alt="">
+
+                            
+                             
+                             
+                            
+                           
+                           
+
+                        </div>
+                        <!-- Add more palace gallery items as needed -->
+                    </div>
+                </div>
+
+
+
+
+
+
+              
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<!-- Gallery Box for Hotels - First Day -->
+<div class="col-xl-7 col-lg-6 order-lg-2 order-1">
+    <div class="gallery">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="gallery_title">Hotels Gallery - First Day -kandy</div>
+                    <div class="gallery_images" id="hotelsGalleryFirstDay">
+                        <!-- Add hotel images for the first day here -->
+                        <div class="gallery_item">
+                            <img src="images/hotel_first_day_1.jpg" alt="">
+                        </div>
+                        <!-- Add more hotel gallery items for the first day as needed -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Gallery Box for Hotels - Second Day -->
+<div class="col-xl-7 col-lg-6 order-lg-2 order-1">
+    <div class="gallery">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="gallery_title">Hotels Gallery - Second Day</div>
+                    <div class="gallery_images" id="hotelsGallerySecondDay">
+                        <!-- Add hotel images for the second day here -->
+                        <div class="gallery_item">
+                            <img src="images/hotel_second_day_1.jpg" alt="">
+                        </div>
+                        <!-- Add more hotel gallery items for the second day as needed -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Special -->
+
+    <!-- Footer -->
+    <script>
+        function redirectToNewPage() {
+    const startLocationInput = document.getElementById('startLocation');
+    const startLocation = startLocationInput ? startLocationInput.value.trim() : '';
+
+    // Check if the startLocation is not empty
+    if (startLocation) {
+        // Build the URL with query parameters
+        const url = `EmailJs_Tutorial-main/index.html?startLocation=${encodeURIComponent(startLocation)}`;
+
+        // Redirect to the new page
+        window.location.href = url;
+    } else {
+        // Handle the case where startLocation is empty
+        console.error('Please enter a start location.');
+        // You can display an error message or take appropriate action
+    }
+}
+
+    </script>
+     
+
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+
+
+</div>
+</body>
+</html>
+

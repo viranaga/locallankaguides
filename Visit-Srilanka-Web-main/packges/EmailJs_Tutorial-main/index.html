@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <script>
+    // Get the URL parameters
+    const params = new URLSearchParams(window.location.search);
+
+    // Retrieve specific parameters
+    const startLocation = params.get('startLocation');
+  </script>
+
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("cahw5IjshswzYMXBF");
+    })();
+  </script>
+</head>
+<body>
+  <div class="container border mt-3 bg-light">
+    <div class="row">
+      <div class="col-md-6 p-5 bg-primary text-white">
+        <div id="price">
+          <h1>Your Order</h1><br><br>
+          <h1>Book your trip to Sri Lanka now</h1> <br><br>
+      
+        </div>
+        <h4></h4>
+      </div>
+      <div class="col-md-6 border-left py-3">
+        <h1>Contact form</h1>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="firstName">First Name *</label>
+            <input type="text" class="form-control" id="firstName" placeholder="Enter first name" required />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name *</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Enter last name" required />
+          </div>
+          <div class="form-group">
+            <label for="country">Country *</label>
+            <input type="text" class="form-control" id="country" placeholder="Enter country" required />
+          </div>
+          <div class="form-group">
+            <label for="phoneNumber">Phone Number *</label>
+            <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter phone number" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" required />
+          </div>
+          <div class="form-group">
+            <label for="dateOfBirth">Date of Birth</label>
+            <input type="date" class="form-control" id="dateOfBirth" />
+          </div>
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <select class="form-control" id="gender">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="selectDate">Select Date *</label>
+            <input type="date" class="form-control" id="selectDate" required />
+          </div>
+          <div class="form-group">
+            <label for="numberOfPeople">Number of People *</label>
+            <select class="form-control" id="numberOfPeople">
+              <option value="1">1 person</option>
+              <option value="2">2 people</option>
+              <option value="3">3 people</option>
+              <option value="4">4 people</option>
+              <option value="5">5 people</option>
+              <option value="6">6 people</option>
+              <option value="7">7 people</option>
+              <option value="8">8 people</option>
+              <option value="9">9 people</option>
+              <option value="10">10 people</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="selectHotel">Select Hotel *</label>
+            <select class="form-control" id="selectHotel">
+              <option value="3">3-star</option>
+              <option value="4">4-star</option>
+              <option value="5">5-star</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea class="form-control" id="message" rows="3"></textarea>
+          </div>
+           
+          <h1>Total: <span id="startLocationValue"></span></h1>    
+          <button type="button" class="btn btn-primary" onclick="sendMail()">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Initialize base price and hotel increase flags
+    let basePrice = 0;
+    let hotelIncreased = false;
+
+    // Function to calculate total based on hotel selection and number of people
+    function calculateTotal() {
+      // If hotel is not increased, set base price
+      if (!hotelIncreased) {
+        basePrice = parseFloat(document.getElementById('startLocationValue').innerText.replace('$', '')) || 0;
+        hotelIncreased = true; // Set flag to true after the first increase
+      }
+
+      // Get the selected hotel option
+      const selectedHotel = document.getElementById("selectHotel").value;
+
+      // Calculate the price increase based on the selected hotel
+      let priceIncrease = 0;
+      if (selectedHotel === '4') {
+        // 4-star hotel increases by 50%
+        priceIncrease = basePrice * 0.5;
+      } else if (selectedHotel === '5') {
+        // 5-star hotel increases by 75%
+        priceIncrease = basePrice * 1.5;
+      }
+
+      // Get the selected number of people
+      const numberOfPeople = parseInt(document.getElementById("numberOfPeople").value, 10);
+
+      // Increase the total price for every person greater than 2
+if (numberOfPeople > 2) {
+  priceIncrease += (numberOfPeople - 2) * basePrice * 0.7;
+}
+
+
+      // Update the total price
+      const totalPrice = basePrice + priceIncrease;
+      document.getElementById('startLocationValue').innerText = '$' + totalPrice.toFixed(2);
+    }
+
+    function sendMail() {
+  var params = {
+    firstName: document.getElementById("firstName").value,
+    // ... (other form fields) ...
+    selectHotel: document.getElementById("selectHotel").value,
+    basePrice: basePrice.toFixed(2), // Add basePrice to the params object
+  };
+
+  const serviceID = "service_x8tdmv7";
+  const templateID = "template_m6z2ewp";
+
+  // Calculate the total before sending the email
+  calculateTotal();
+
+  emailjs.send(serviceID, templateID, params)
+    .then(res => {
+      // Clear form fields after submission
+      document.getElementById("contactForm").reset();
+      console.log(res);
+      alert("Your message sent successfully!!");
+    })
+    .catch(err => console.log(err));
+}
+
+
+    // Display the startLocation value
+    document.getElementById('startLocationValue').innerText = startLocation || '0.00';
+
+    // Add an event listener to the selectHotel and numberOfPeople elements to recalculate total on change
+    document.getElementById('selectHotel').addEventListener('change', calculateTotal);
+    document.getElementById('numberOfPeople').addEventListener('change', calculateTotal);
+  </script>
+</body>
+</html>
